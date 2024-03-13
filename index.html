@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restify</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const images = ["Pic1.jpg", "Top.jpg", "Top_img.jpg"];
+  let currentIndex = 0;
+  const heroImage = document.getElementById("heroImage");
+
+  function changeBackground() {
+    heroImage.style.backgroundImage = `url(${images[currentIndex]})`;
+    currentIndex = (currentIndex + 1) % images.length;
+    heroImage.style.backgroundPosition = "0% 0%";
+    void heroImage.offsetWidth;
+    heroImage.classList.add("slide-left");
+    setTimeout(() => {
+      heroImage.classList.remove("slide-left");
+    }, 1000);
+  }
+
+  setInterval(changeBackground, 2000);
+});
+  </script>
+
+
+<div class="hero-image" id="heroImage">
+  <div class="container">
+      <a href="#" class="logo">Restify</a>
+    <nav>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">List an Item</a></li>
+      </ul>
+    </nav>
+  </div>
+    <div class="text-overlay">
+      <h1>Rent Almost Anything</h1>
+      <p style="color: black;">Convenient access to any item</p>
+      <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button type="button">Search</button>
+      </div>
+    </div>
+  </div>
+
+<main>
+
+    <h2>Most Popular</h2>
+    <div class="categories">
+      <div class="category">
+        <h3>Properties</h3>
+        <img src="Top.jpg" alt="Property Icon"> 
+        <h3>Balay</h3>
+        <p>Cost niya</p>
+      </div>
+      <div class="category">
+        <h3>Balay</h3>
+        <p>Cost niya</p>
+      </div>
+      <div class="category">
+        <h3>Balay</h3>
+        <p>Cost niya</p>
+      </div>
+    </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2024 justrent. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
